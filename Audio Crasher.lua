@@ -1,3 +1,5 @@
+_G.Crasher = true
+_G.ID = 7025257908 -- report if you want because this shit is annoying :D
 local Me = game:GetService("Players").LocalPlayer
 local Char = Me.Character
 local BPack = Me.Backpack
